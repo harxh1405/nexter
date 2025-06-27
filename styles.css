@@ -64,6 +64,97 @@ body {
 .header {
   background-color: var(--color-grey-dark-1);
   grid-column: full-start/col-end 6;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: 1fr 4fr 2fr;
+  background-image: linear-gradient(
+      rgba(14, 25, 38, 0.8),
+      rgba(16, 25, 38, 0.8)
+    ),
+    url(https://images.unsplash.com/photo-1644488030797-48deffe93492?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  .logo {
+    grid-column: 2/7;
+    justify-self: center;
+    align-self: center;
+    font-size: 3rem;
+    color: var(--primary-color-dark);
+    font-family: var(--font-secondary);
+  }
+
+  .hero {
+    grid-column: 2/7;
+    align-self: center;
+    display: grid;
+    grid-template-columns: subgrid;
+    line-height: 1;
+    row-gap: 2rem;
+    .heading {
+      grid-column: 1/6;
+      font-size: 1.5rem;
+      color: var(--primary-color-dark);
+      text-transform: uppercase;
+    }
+    .sub-heading {
+      grid-column: 1/6;
+      font-size: 4rem;
+      color: white;
+      font-family: var(--font-secondary);
+      /* line-height: 1; */
+    }
+    .btn-hero {
+      border: none;
+      background-color: #b28451;
+      color: white;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      padding: 1.5rem 1rem;
+      width: 20rem;
+      grid-column: span 2;
+      margin-top: 3rem;
+    }
+  }
+  .sponsers {
+    grid-column: 2/7;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .sponser-text {
+      grid-column: 1/-1;
+
+      color: (0, 0, 0, 0.8);
+      position: relative;
+    }
+    legend {
+      background-color: #ffffff99;
+      justify-self: center;
+      align-self: center;
+      /* padding: 0.5rem 1rem; */
+      /* z-index: -1; */
+    }
+    legend::before {
+      content: "";
+      display: block;
+      /* width: 100%; */
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: translateY(50%);
+      border-top: 1px solid #ffffff99;
+      /* z-index: 2; */
+      position: absolute;
+    }
+    .sponser-icons {
+      grid-column: 1/-1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & > *:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
 }
 
 .realtors {
